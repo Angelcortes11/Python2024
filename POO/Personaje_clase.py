@@ -2,6 +2,8 @@ class Personaje :
     #atributo de clase
     estado = True #vivo
     vida = 100 #cantidad de vida
+
+
     #constructor / atributo de instancia
     def __init__(self, nombre, altura, velocidad, resistencia, fuerza):
         self.nombre = nombre
@@ -34,6 +36,13 @@ def recibir_dano (self, cantidad):
         print(f"{self.nombre} ya esta muerto")
 
 def mostrar_info(self):
-    print
+    estado_str = "Vivo" if self.estado else "Muerto"
+    print(f"Nombre: {self.nombre}")
+    print(f"Altura: {self.altura}")
+    print(f"Velocidad: {self.velocidad}")
+    print(f"Resistencia: {self.resistencia}")
+    print(f"Fuerza: {self.fuerza}")
+    print(f"Estado: {estado_str}")
 
 def estado (self):
+    print
