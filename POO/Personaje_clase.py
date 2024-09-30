@@ -35,6 +35,12 @@ def recibir_dano (self, cantidad):
     else:
         print(f"{self.nombre} ya esta muerto")
 
+    self.resistencia -= cantidad
+    if self.resistencia <= 0:
+        self.resistencia = 0
+        self.estado = False
+        print(f"{self.nombre} ha muerto")
+
 def mostrar_info(self):
     estado_str = "Vivo" if self.estado else "Muerto"
     print(f"Nombre: {self.nombre}")
@@ -44,5 +50,3 @@ def mostrar_info(self):
     print(f"Fuerza: {self.fuerza}")
     print(f"Estado: {estado_str}")
 
-def estado (self):
-    print
