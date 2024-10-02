@@ -1,36 +1,49 @@
 from Personaje_clase import Personaje
 
-print("Este programa es para que el usuario decida la media de cada atributo de un personaje")
+def pedir_datos_personaje(num):
+    
+    print(f"Introduce los datos para el personaje {num}:") 
+    nombre = input("Nombre: ")
+    altura = float(input("Altura: "))
+    velocidad = float(input("Velocidad: "))
+    resistencia = float(input("Resistencia:(0/30)"))
+    fuerza = float(input("Fuerza: (30/60) "))
+    return Personaje(nombre, altura, velocidad, resistencia, fuerza)
 
-personajes = []
+def mostrar_menu():
 
-while True:
-    opcion = input("Añadir altura (a), Añadir velocidad (v), Añadir resistencia (r), Añadir fuerza (f), ver todos los atributos (va), Salir (s): ")
+    print("--- Menú ---")
+    print("1. Mostrar información de ambos personajes")
+    print("2. Personaje 1 ataca a Personaje 2")
+    print("3. Personaje 2 ataca a Personaje 1")
+    print("4. Salir")
+    return input("Elige una opción: ")
 
-    if opcion == "a":
-        personajes.append(input(" altura: "))
+personaje1 = pedir_datos_personaje(1)
+personaje2 = pedir_datos_personaje(2)
 
-    elif opcion == "v":
-        personajes.append(input(" velocidad: "))
+opcion = ''
+while opcion != '4':
+    opcion = mostrar_menu()
 
-    elif opcion == "r":
-          personajes.append(input(" resistencia: "))
+    if opcion == '1':
+        print("Información de los personajes:")
+        personaje1.mostrar_info()
+        personaje2.mostrar_info()
 
-    elif opcion == "f":
-          personajes.append(input(" fuerza: "))
+    elif opcion == '2':
+        print("Personaje 1 ataca a Personaje 2:")
+        personaje1.atacar(personaje2)
 
-    elif opcion == "va":
-          print("Atributos del personaje: ", personajes )
+    elif opcion == '3':
+        print("Personaje 2 ataca a Personaje 1:")
+        personaje2.atacar(personaje1)
 
-    elif opcion == "s":
-        print("Gracias por utilizar este programa")
-        break
+    elif opcion == '4':
+        print("Saliendo del programa...")
+
     else:
-        print("fin por error en la eleccion de las opciones")
-   
-    p1 = Personaje("Superman", 120, 75, 69, 100)
-print (f"el personaje se llama {p1.nombre} y cuenta con los atributos de: " , personajes)
-
+        print("Opción no válida. Intenta de nuevo.")
 
 print("fin")
 
