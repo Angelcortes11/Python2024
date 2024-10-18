@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', function(){
         filtroVetLocalidad();
     });
 
-function filtroVetLocalidad() {
-    const texto = imputBusqueda.value.tolowerCase();
-    botonesVet.forEach(boton => {
-        const localidad = boton.getAttribute('data-localidad').tolowerCase();
-        if (localidad.includes(texto)) {
-        boton.style.display = '';
-        } else {
-            boton.style.display = 'none';
+    function filtroVetLocalidad() {
+        const texto = inputBusqueda.value.toLowerCase();
+        botonesVet.forEach(boton => {
+            const localidad = boton.getAttribute('data-localidad').toLowerCase();
+            if (localidad.includes(texto)) {
+            boton.style.display = '';
+            } else {
+                boton.style.display = 'none';
             }
         });
     }
