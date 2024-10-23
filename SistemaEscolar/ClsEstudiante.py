@@ -2,10 +2,16 @@ import sqlite3
 
 class Estudiante:
 
-    def _init_(self, nombre, edad, anho_id):
+    def _init_(self, legajo_id, dni_id, nombre, apellido, edad, fechadenacimiento, curso, estado, email):
+        self.legajo_id = legajo_id
+        self.dni_id = dni_id
         self.nombre = nombre
+        self.apellido = apellido
         self.edad = edad
-        self.anho_id = anho_id
+        self.fechadenacimiento = fechadenacimiento
+        self.curso = curso
+        self.estado = estado
+        self.email = email
 
     def guardar(self):
 
