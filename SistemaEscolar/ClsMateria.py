@@ -14,20 +14,20 @@ class Materia:
         conn = sqlite3.connect('escolar.db')
         c = conn.cursor()
 
-        c.execute('INSERT INTO Estudiantes (nombre, edad, anho_id) VALUES (?, ?, ?)',
+        c.execute('INSERT INTO Materias (nombre, edad, anho_id) VALUES (?, ?, ?)',
             (self.nombre, self.edad, self.anho_id))
 
         conn.commit()
         conn.close()
 
         @staticmethod
-        def obtener_estudiantes():
+        def obtener_Materias():
             conn = sqlite3.connect('escolar.db')
             c = conn.cursor()
 
-            c.execute('SELECT * FROM Estudiantes')
+            c.execute('SELECT * FROM Materias')
 
-            estudiantes = c.fetchall()
+            materias = c.fetchall()
             conn.close()
 
-            return estudiantes 
+            return Materia

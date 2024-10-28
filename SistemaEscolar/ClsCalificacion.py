@@ -1,6 +1,6 @@
 import sqlite3
 
-class Califi:
+class Calificacion:
 
     def _init_(self, id_estudiante, id_materia, nota, fecha):
         self.id_estudiante = id_estudiante
@@ -13,20 +13,20 @@ class Califi:
         conn = sqlite3.connect('escolar.db')
         c = conn.cursor()
 
-        c.execute('INSERT INTO Estudiantes (nombre, edad, anho_id) VALUES (?, ?, ?)',
+        c.execute('INSERT INTO Calificaciones (nombre, edad, anho_id) VALUES (?, ?, ?)',
             (self.nombre, self.edad, self.anho_id))
 
         conn.commit()
         conn.close()
 
         @staticmethod
-        def obtener_estudiantes():
+        def obtener_calificaciones():
             conn = sqlite3.connect('escolar.db')
             c = conn.cursor()
 
-            c.execute('SELECT * FROM Estudiantes')
+            c.execute('SELECT * FROM Calificaciones')
 
-            estudiantes = c.fetchall()
+            calificaciones = c.fetchall()
             conn.close()
 
-            return estudiantes 
+            return Calificacion 
