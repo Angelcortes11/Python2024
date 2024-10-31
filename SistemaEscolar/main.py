@@ -1,8 +1,8 @@
 import sqlite3
-from estudiante import Estudiante 
-from profesor import Profesor
-from materia import Materia
-from calificacion import Calificacion
+from ClsEstudiante import Estudiante 
+from ClsProfesor import Profesor
+from ClsMateria import Materia
+from ClsCalificacion import Calificacion
 
 # Función para conectar la base de datos SQLite
 def conectar_db():
@@ -66,5 +66,5 @@ def main():
     conn.close()
 
 #Punto de entrada del programa
-if __name__ == "_main_":
+if __name__ == "__main__":
     main()
