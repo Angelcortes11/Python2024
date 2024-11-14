@@ -25,7 +25,9 @@ class Estudiante:
         conn.close()
 
         @staticmethod
-        def obtener_estudiantes():
+        
+        
+        def obtener_estudiante ():
             conn = sqlite3.connect('escolar.db')
             c = conn.cursor()
 

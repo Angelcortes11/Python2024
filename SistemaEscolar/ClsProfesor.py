@@ -22,7 +22,7 @@ class Profesor:
         conn.close()
 
         @staticmethod
-        def obtener_profesores():
+        def obtener_profesor():
             conn = sqlite3.connect('escolar.db')
             c = conn.cursor()
 

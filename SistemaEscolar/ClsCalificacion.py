@@ -20,7 +20,7 @@ class Calificacion:
         conn.close()
 
         @staticmethod
-        def obtener_calificaciones():
+        def obtener_calificacion():
             conn = sqlite3.connect('escolar.db')
             c = conn.cursor()
 
